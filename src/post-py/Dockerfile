@@ -4,7 +4,7 @@ WORKDIR /app
 ADD . /app
 
 RUN apk --update add python py-pip openssl ca-certificates py-openssl wget
-RUN apk --update add --virtual build-dependencies libffi-dev openssl-dev python-dev py-pip build-base
+RUN apk --update add --virtual build-dependencies libffi-dev openssl-dev python-dev py-pip build-base gcc musl-dev
 
 RUN pip install -r /app/requirements.txt
 
